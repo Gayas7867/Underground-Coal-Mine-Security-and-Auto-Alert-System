@@ -1,0 +1,24 @@
+# Underground Coal Mine Auto Alert System
+
+## Overview  
+The Underground Coal Mine Auto Alert System is designed to enhance safety for miners working underground by monitoring hazardous conditions such as gas leaks, fire, and water levels. Using various sensors, including gas and water sensors, the system detects dangerous situations early to prevent accidents.
+
+## Key Features  
+- Continuous monitoring of gas levels and water levels underground  
+- Automatic alerts to warn miners of unsafe conditions  
+- Helps miners evacuate safely before hazardous situations escalate  
+- Improves overall mine safety and reduces risks  
+
+## Technologies Used  
+- Gas Sensors  
+- Water Level Sensors  
+- Arduino Microcontroller  
+- IoT for data transmission  
+- MQTT protocol and Cloud Computing for alerting  
+
+## How It Works  
+Sensors installed in the mine detect gases, water levels, and fire hazards in real-time. When unsafe conditions are detected, the system triggers automatic alerts to miners and control rooms, enabling quick evacuation and preventive measures. This helps protect workers in mines where oxygen is limited and hazardous gases can accumulate.
+
+## Author  
+Mahammad Gayas  
+Email: mohammedgayas49@gmail.com
