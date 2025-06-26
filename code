@@ -1,0 +1,56 @@
+// ===========================================================
+// Underground Coal Mine Auto Alert System
+// ESP32 Version
+// ===========================================================
+
+#define GAS_SENSOR_PIN 34           // ESP32 ADC Pin for Gas Sensor
+#define WATER_SENSOR_PIN 35         // ESP32 ADC Pin for Water Level Sensor
+#define BUZZER_PIN 5                // ESP32 Digital Pin for Buzzer
+
+// Threshold values (adjust as per sensor and environment)
+#define GAS_THRESHOLD 600
+#define WATER_THRESHOLD 500
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(BUZZER_PIN, OUTPUT);
+  digitalWrite(BUZZER_PIN, LOW);
+  Serial.println("Initializing Underground Coal Mine Monitoring System...");
+}
+
+void loop() {
+  // Read sensor values
+  int gasValue = analogRead(GAS_SENSOR_PIN);
+  int waterValue = analogRead(WATER_SENSOR_PIN);
+
+  // Print values for monitoring
+  Serial.println("-----------------------------");
+  Serial.print("Gas Sensor Value: ");
+  Serial.println(gasValue);
+  Serial.print("Water Sensor Value: ");
+  Serial.println(waterValue);
+
+  // Check gas level
+  if (gasValue > GAS_THRESHOLD) {
+    Serial.println("⚠️ WARNING: Gas Level is HIGH! Evacuate immediately.");
+    alarm();
+  }
+
+  // Check water level
+  if (waterValue > WATER_THRESHOLD) {
+    Serial.println("⚠️ WARNING: Water Level is HIGH! Evacuate immediately.");
+    alarm();
+  }
+
+  // Wait before next reading
+  delay(1000);
+}
+
+// Alarm function
+void alarm() {
+  // Sound the alarm
+  digitalWrite(BUZZER_PIN, HIGH);
+  delay(500);
+  digitalWrite(BUZZER_PIN, LOW);
+  delay(500);
+}
